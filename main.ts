@@ -96,7 +96,6 @@ function Spell_casting () {
 }
 sprites.onOverlap(SpriteKind.Friendly_projectile, SpriteKind.Projectile, function (sprite, otherSprite) {
     Proyectiles_in_screen += -1
-    sprites.destroy(otherSprite)
 })
 function Speedy_Spell (Artifact: Sprite, Artifact_array: number[]) {
     if (sprites.readDataNumber(Artifact, "HP") > 0) {
@@ -658,6 +657,7 @@ sprites.onOverlap(SpriteKind.Player_Hitbox, SpriteKind.Projectile, function (spr
     Proyectiles_in_screen += -1
     sprites.destroy(otherSprite)
 })
+let Level = 0
 let Level_HP = 0
 let Equiped_artifact: number[] = []
 let Invulnerability = 0
@@ -683,7 +683,6 @@ let _new: number[] = []
 let RoF = 0
 let Initial_artifact: number[] = []
 let Direction = 0
-let Level = 0
 Direction = 1.62
 let Projectile_speed = 30
 Initial_artifact = [RoF, Projectile_speed]
